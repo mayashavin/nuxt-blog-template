@@ -40,7 +40,7 @@ jobs:
       run: yarn
     
     - name: Build
-      run: yarn build
+      run: yarn generate
     
 #     - name: Deploy to Vercel
 #       uses: amondnet/vercel-action@v19.0.1+1
@@ -56,3 +56,6 @@ jobs:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         NETLIFY_DEPLOY_TO_PROD: true
+        build_command: yarn generate
+        build_directory: dist
+        install_command: yarn
