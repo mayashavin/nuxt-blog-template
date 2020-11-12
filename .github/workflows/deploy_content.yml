@@ -36,11 +36,11 @@ jobs:
         commit_user_email: actions@github.com # to change
         commit_author: My GitHub Actions Bot <actions@github.com>
     #    submodules: recursive      
-    - name: Install dependencies
-      run: yarn
+#     - name: Install dependencies
+#       run: yarn
     
-    - name: Build
-      run: yarn generate
+#     - name: Build
+#       run: yarn generate
     
 #     - name: Deploy to Vercel
 #       uses: amondnet/vercel-action@v19.0.1+1
