@@ -13,34 +13,34 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#     - uses: actions/checkout@v2
-#     - name: Clone submodules
-#       uses: actions/checkout@v2
-#       with:
-#         token: ${{ secrets.PAT_REPO_HOOK_TOKEN }}
-#         submodules: true
+    - uses: actions/checkout@v2
+    - name: Clone submodules
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PAT_REPO_HOOK_TOKEN }}
+        submodules: true
     
-#     - name: Update submodules content
-#       run: |
-#         git submodule update --remote --recursive  
-#     - run: git pull
+    - name: Update submodules content
+      run: |
+        git submodule update --remote --recursive  
+    - run: git pull
           
-#     - name: Update submodules index
-#       uses: stefanzweifel/git-auto-commit-action@v4
-#       with:
-#         # Required
-#         commit_message: Update submodule        
+    - name: Update submodules index
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        # Required
+        commit_message: Update submodule        
 
-#         # Optional commit user and author settings
-#         commit_user_name: My GitHub Actions Bot
-#         commit_user_email: actions@github.com # to change
-#         commit_author: My GitHub Actions Bot <actions@github.com>
-#     #    submodules: recursive      
-#     - name: Install dependencies
-#       run: yarn
+        # Optional commit user and author settings
+        commit_user_name: My GitHub Actions Bot
+        commit_user_email: actions@github.com # to change
+        commit_author: My GitHub Actions Bot <actions@github.com>
+    #    submodules: recursive      
+    - name: Install dependencies
+      run: yarn
     
-#     - name: Build
-#       run: yarn build
+    - name: Build
+      run: yarn build
     
 #     - name: Deploy to Vercel
 #       uses: amondnet/vercel-action@v19.0.1+1
@@ -49,9 +49,10 @@ jobs:
 #         vercel-args: '--prod' #Optional
 #         vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
 #         vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
-     - name: Netlify Deploy
-       uses: jsmrcaga/action-netlify-deploy@v1.2.0
-       with:
-         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_APP_ID }}
-         NETLIFY_DEPLOY_TO_PROD: true
+
+    - name: Netlify Deploy
+      uses: jsmrcaga/action-netlify-deploy@v1.2.0
+      with:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_APP_ID }}
+        NETLIFY_DEPLOY_TO_PROD: true
