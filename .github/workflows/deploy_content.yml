@@ -17,7 +17,7 @@ jobs:
     - name: Clone submodules
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.PAT_REPO_HOOK_TOKEN }}
+        token: ${{ secrets.DISPATCH_HOOK_TOKEN }}
         submodules: true
     
     - name: Update submodules content
